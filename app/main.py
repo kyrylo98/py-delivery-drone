@@ -1,8 +1,10 @@
 from typing import List, Optional
 
+
 class Cargo:
     def __init__(self, weight: int) -> None:
         self.weight = weight
+
 
 class BaseRobot:
     def __init__(self, name: str, weight: float,
@@ -26,6 +28,7 @@ class BaseRobot:
     def get_info(self) -> str:
         return f"Robot: {self.name}, Weight: {self.weight}"
 
+
 class FlyingRobot(BaseRobot):
     def __init__(self, name: str, weight: float,
                  coords: Optional[List[float]] = None) -> None:
@@ -41,6 +44,7 @@ class FlyingRobot(BaseRobot):
 
     def go_down(self, step: int = 1) -> None:
         self.coords[2] -= step
+
 
 class DeliveryDrone(FlyingRobot):
     def __init__(
